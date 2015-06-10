@@ -67,4 +67,41 @@ echo "
 ";
 echo "</table>";
 $conexion=null;
+//socializo
+echo "link que puedan interesar";
+$conexion= new pdo('sqlite:favoritos.sqlite');
+
+$cons="select * from favoritos ORDER BY RANDOM() LIMIT 3;";
+
+$resu=$conexion-> exec($cons);
+echo "
+
+
+ <table border=3px width=100%>
+   <tr>
+     <td>Titulo</td>
+     <td>Direccion</td>
+     <td>Categoria</td>
+     <td>Comentario</td>
+     <td>Valoracion</td>
+     
+     </tr>
+     
+
+";
+
+foreach ($row as $resu) {
+  
+
+   echo "<tr>
+      <td>".$row['titulo']."</td>
+      <td>".$row['direccion']."</td>
+      <td>".$row['categoria']."</td>
+      <td>".$row['comentario']."</td>
+      <td>".$row['valoracion']."</td>
+    "
+    
+}
+$conexion=null;
+
 ?>

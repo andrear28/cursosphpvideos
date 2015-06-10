@@ -4,24 +4,27 @@ session_start();
 $usuario=$_POST['usuario'];
 $contrasena=$_POST['contrasena'];
 
+
 $conexion= new pdo('sqlite:favoritos.sqlite');
 
 $consulta="SELECT * FROM usuarios;";
 
 $resultado= $conexion-> query($consulta);
 
-echo $usuario." ".$contrasena."<br/>";
+//echo $usuario." ".$contrasena."<br/>";
 
 foreach ($resultado as $fila) {
 	
 	$usuariobasedatos=$fila['usuario'];
 	$contrasenabasedatos=$fila['contrasena'];
+	//$permisosenbase=$fila['permisos'];
+
 	echo "<br/>".$usuariobasedatos." ".$contrasenabasedatos."<br/>";
 	if ($usuario==$usuariobasedatos & $contrasena==$contrasenabasedatos) {
 		
       $_SESSION['usuario']=$usuario;
       $_SESSION['contrasena']=$contrasena;
-
+       //$_SESSION['permisos']=$permisosenbase;
 echo '
 <html>
 <head>

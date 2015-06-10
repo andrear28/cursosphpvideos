@@ -31,8 +31,8 @@ usuario Char(40)Not Null,
 contrasena Char(40)Not Null,
 nombre Char(100)Not Null,
 apellido Char(40)Not Null,
-edad Int,
-permisos Int)";
+edad Int
+)";
 
 
 
@@ -62,8 +62,8 @@ $insert = $conexion->exec("INSERT INTO favoritos VALUES('andrea', 'andreac', 'gm
 $insert = $conexion->exec("INSERT INTO favoritos VALUES('sasa','12345','twitter','http://www.twitter.com','Tecnologia','es una red social',11)");
 
 
-$insert = $conexion->exec("INSERT INTO usuarios VALUES('maria', '12345', 'maria fernada', 'Rodriguez', 20, 2)");
-$insert = $conexion->exec("INSERT INTO usuarios VALUES('andrea','54321','Andrea','Plazas Rodriguez', 18,1)");
+$insert = $conexion->exec("INSERT INTO usuarios VALUES('maria', '12345', 'maria fernada', 'Rodriguez', 20)");
+$insert = $conexion->exec("INSERT INTO usuarios VALUES('andrea','54321','Andrea','Plazas Rodriguez', 18)");
 
 
 

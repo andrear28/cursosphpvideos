@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-/*
+
 $_SESSION['usuario']="sasa";
 $_SESSION['contrasena']="12345";
-*/
+
 $conexion= new PDO ('sqlite:favoritos:sqlite');
 echo '
 
